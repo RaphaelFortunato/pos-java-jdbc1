@@ -7,8 +7,6 @@ import conexao.jdbc.SingleConnection;
 import dao.UserPosDAO;
 import junit.framework.TestCase;
 import model.Userposjava;
-=======
-import conexaojdbc.SingleConnection;
 >>>>>>> refs/heads/master
 
 public class TesteBancoJdbc {
