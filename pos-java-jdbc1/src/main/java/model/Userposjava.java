@@ -5,6 +5,7 @@ public class Userposjava {
 	private Long id;
 	private String nome;
 	private String email;
+	
 	public Long getId() {
 		return id;
 	}
