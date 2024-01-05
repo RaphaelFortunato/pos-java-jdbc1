@@ -2,12 +2,12 @@ package pos_java_jdbc1.pos_java_jdbc1;
 
 import org.junit.Test;
 
-<<<<<<< HEAD
+
 import conexao.jdbc.SingleConnection;
 import dao.UserPosDAO;
 import junit.framework.TestCase;
 import model.Userposjava;
->>>>>>> refs/heads/master
+
 
 public class TesteBancoJdbc {
 	
