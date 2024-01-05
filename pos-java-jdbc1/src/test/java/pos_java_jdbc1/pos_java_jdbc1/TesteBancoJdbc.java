@@ -12,7 +12,14 @@ public class TesteBancoJdbc {
 	@Test
 	public void initBanco() {
 		
-		SingleConnection.getConnection();
+		UserPosDAO userPosDAO = new UserPosDAO();
+		Userposjava userposjava = new Userposjava();
+		
+		userposjava.setId(6L);
+		userposjava.setNome("Bores");
+		userposjava.setEmail("bores@gmail.com");
+		
+		userPosDAO.salvar(userposjava);
 	}
 
 }
