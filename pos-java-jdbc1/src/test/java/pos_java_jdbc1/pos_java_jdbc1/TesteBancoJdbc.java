@@ -1,5 +1,7 @@
 package pos_java_jdbc1.pos_java_jdbc1;
 
+import java.util.List;
+
 import org.junit.Test;
 
 
@@ -22,6 +24,36 @@ public class TesteBancoJdbc {
 		userposjava.setEmail("bores@gmail.com");
 		
 		userPosDAO.salvar(userposjava);
+	}
+	
+	@Test
+	public void initListar() {
+		try {
+			UserPosDAO dao = new UserPosDAO();
+			List<Userposjava> list = dao.listar();
+			
+			for (Userposjava userposjava : list) {
+				System.out.println(userposjava);
+				System.out.println("----------------------------");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	@Test
+	public void initBuscar() {
+		UserPosDAO dao = new UserPosDAO();
+		try {
+			Userposjava userposjava = dao.bsucar(6L);
+			
+			System.out.println(userposjava);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 }
