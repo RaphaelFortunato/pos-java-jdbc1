@@ -31,7 +31,7 @@ public class UserPosDAO {
 			
 		} catch (Exception e) {
 			try {
-				connection.rollback();
+				connection.rollback();//se der algum erro da compilação o rollback() ajuda a não interferir no banco
 			} catch (SQLException e1) {
 				e1.printStackTrace();
 			}
@@ -61,7 +61,7 @@ public class UserPosDAO {
 		return list;
 	}
 	
-	public Userposjava bsucar(Long id) throws Exception{
+	public Userposjava buscar(Long id) throws Exception{
 		Userposjava retorno = new Userposjava();
 		
 		String sql = "SELECT * FROM userposjava where id = " + id;
@@ -78,6 +78,30 @@ public class UserPosDAO {
 		}
 		
 		return retorno;
+	}
+	
+	
+	public void atualizar(Userposjava userposjava) {
+		
+		try {
+			
+			String sql = "update userposjava set nome = ? where id = " + userposjava.getId();
+			
+			PreparedStatement statement = connection.prepareStatement(sql);
+			statement.setString(1, userposjava.getNome());
+			
+			statement.execute();
+			connection.commit();
+			
+		}catch (Exception e) {
+			try {
+				connection.rollback();
+			} catch (SQLException e1) {
+				e1.printStackTrace();
+			}
+			e.printStackTrace();
+		}
+		
 	}
 
 }
