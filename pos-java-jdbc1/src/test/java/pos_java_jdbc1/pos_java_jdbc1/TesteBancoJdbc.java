@@ -19,9 +19,9 @@ public class TesteBancoJdbc {
 		UserPosDAO userPosDAO = new UserPosDAO();
 		Userposjava userposjava = new Userposjava();
 		
-		userposjava.setId(6L);
-		userposjava.setNome("Bores");
-		userposjava.setEmail("bores@gmail.com");
+		//userposjava.setId(6L);// no começo setavamos manualmente, mas agora depois de criado o SEQUENCE no banco o id é gerado automaticamente
+		userposjava.setNome("Fernanda");
+		userposjava.setEmail("fernanda@gmail.com");
 		
 		userPosDAO.salvar(userposjava);
 	}

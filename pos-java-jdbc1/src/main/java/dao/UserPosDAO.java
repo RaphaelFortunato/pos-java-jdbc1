@@ -21,11 +21,12 @@ public class UserPosDAO {
 	public void salvar(Userposjava userposjava) {
 		try {
 			
-			String sql = "INSERT INTO public.userposjava(id, nome, email) VALUES (?, ?, ?)";
+			//String sql = "INSERT INTO public.userposjava(id, nome, email) VALUES (?, ?, ?)";
+			String sql = "INSERT INTO public.userposjava(nome, email) VALUES (?, ?)";//aqui o id é gerado automaticamente pelo banco, por isso timramos todas as referencias de id
 			PreparedStatement insert = connection.prepareStatement(sql);
-			insert.setLong(1, userposjava.getId());
-			insert.setString(2, userposjava.getNome());
-			insert.setString(3, userposjava.getEmail());
+			//insert.setLong(1, userposjava.getId());
+			insert.setString(1, userposjava.getNome());
+			insert.setString(2, userposjava.getEmail());
 			insert.execute();
 			connection.commit();//salva no banco -> verificar comentário SingleConnection
 			
